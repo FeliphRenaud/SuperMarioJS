@@ -1,0 +1,110 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  
+}
+
+body{
+  background-image: url('../assets/background_image_Super_Mario_World.webp');
+  background-size: cover;
+  height: 100vh;
+  opacity: 90%;
+}  
+
+.game-board  {
+  width: 80%;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  background: linear-gradient(#87CEEB, #e0f6ff);
+  transform: translate(-50%, -50%);
+  border: 2px solid #15e45a;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden; /*para tudo que sair 
+  da delimitação do game-board nao apareça 
+  na tela */
+}
+
+.ground{
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+  width: 200%;
+  }
+
+.pipe {
+  position: absolute;
+  bottom: 30px;
+  width: 70px;
+  animation: pipe-animation 1.3s infinite linear;
+  }
+
+
+  .mario {
+    width: 150px;
+    position: absolute;
+    bottom: 30px;
+  }
+  
+  .jump {
+    animation: jump 550ms ease-out;
+  }
+  
+  .clouds{
+    position: absolute;
+    width: 250px;
+    animation: clouds-animation 15s infinite linear;
+  }
+ 
+@keyframes clouds-animation {
+  from{
+    right: -280px;
+  }
+  to{
+    right:100%
+  }
+}  
+
+@keyframes pipe-animation{
+  from{
+    right: -80px;
+  }
+  to{
+    right: 100%;
+  }
+}
+
+@keyframes jump{
+  /*nesta parte da animação voce deve compartimentar 
+  todos os acontecimentos ex:
+  1 ele estara correndo e só então saltara 
+  2 ele chegara no apice do salto 
+  3 então ele retornara ao solo
+  o que seria 
+
+  1 inicio 0px
+  2 meio 180px 
+  3 termino 0px 
+  */
+
+  0%{
+    bottom: 30px;
+  }
+  40%{
+    bottom: 175px;
+  }  
+  50%{
+    bottom: 180px;
+  }
+  60%{
+    bottom: 175px;
+  }
+  70%{
+    bottom: 150px;
+  }
+  100%{
+    bottom: 30px;
+  }
+}
